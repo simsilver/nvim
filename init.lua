@@ -21,7 +21,18 @@ require("lazy").setup({
     branch = "v2.5",
     import = "nvchad.plugins",
   },
+  {
+    'dense-analysis/ale',
+    lazy = false,
+    config = function()
+      -- Configuration goes here.
+      local g = vim.g
 
+      g.ale_lint_on_text_changed = 'never'
+      g.ale_lint_on_enter = 0
+
+    end
+  },
   { import = "plugins" },
 }, lazy_config)
 
